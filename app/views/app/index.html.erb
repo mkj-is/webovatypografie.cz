@@ -1,0 +1,33 @@
+<div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper container">
+        <div class="col s12">
+          <a href="#!" class="brand-logo">Truty</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+<div class="container">
+  <%= form_for :input do |f| %>
+    <p class="input-field">
+      <%= f.label :text %>
+      <%= f.text_area :text, class: "materialize-textarea" %>
+    </p>
+    <p>
+      <%= f.label :language %>
+      <%= f.select :language, ['English', 'French', 'Czech'], {}, { :class => 'browser-default' } %>
+    </p>
+    <p>
+      <%= f.check_box :escape %>
+      <%= f.label :escape, "Escape HTML entities" %>
+    </p>
+    <p>
+      <%= f.button "Convert input", class: "btn waves-effect waves-light" %>
+    </p>
+  <% end %>
+  <% if @fixed_text %>
+    <p class="flow-text">
+      <%= @fixed_text %>
+    </p>
+  <% end %>
+</div>
