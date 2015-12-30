@@ -1,7 +1,7 @@
 <div class="container">
   <%= form_for :input do |f| %>
     <p>
-      <%= f.label :text, "Opravit typografické chyby v tomto textu:" %><br>
+      <%= f.label :text, "Opravit typografické chyby v tomto textu:" %><br>
       <%= f.text_area :text, rows: 4 %>
     </p>
     <p class="checkboxes">
@@ -48,7 +48,7 @@
       <%= f.label :escape, "Převést do HTML entit" %>
     </p>
     <p>
-      <%= f.button "Zpracovat vstup", class: "btn" %>
+      <%= f.button "Zpracovat vstup" %>
     </p>
   <% end %>
   <% if @fixed_text %>
