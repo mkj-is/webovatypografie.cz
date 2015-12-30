@@ -24,4 +24,8 @@ class AppController < ActionController::Base
       @input = OpenStruct.new(defaults)
     end
   end
+
+  def about
+  end
+  
 end
