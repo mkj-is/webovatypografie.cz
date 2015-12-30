@@ -1,0 +1,20 @@
+
+@include min-media-query($on-laptop) {
+	.checkboxes {
+		-webkit-column-count: 2;
+	    -moz-column-count: 2;
+	    column-count: 2;
+	}
+}
+
+textarea {
+	font-size: inherit;
+	font-family: inherit;
+	line-height: inherit;
+	width: 100%;
+	padding: $base-font-size / 2;
+}
+
+input[type=checkbox] {
+	vertical-align: middle;
+}

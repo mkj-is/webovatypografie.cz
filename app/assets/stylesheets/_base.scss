@@ -21,11 +21,30 @@ body {
     color: $text-color;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
+
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 p {
-    text-align: left;
-    -webkit-font-smoothing: antialiased;
+    hyphens: manual;
+    -webkit-hyphens: manual;
+    -moz-font-hyphens: manual;
+    -ms-hyphens: manual;
+
+    hyphenate-limit-lines: 3;
+    -webkit-hyphenate-limit-lines: 3;
+    -moz-font-hyphenate-limit-lines: 3;
+    -ms-hyphenate-limit-lines: 3;
+
+    hyphenate-limit-last: always;
+    -webkit-hyphenate-limit-last: always;
+    -moz-font-hyphenate-limit-last: always;
+    -ms-hyphenate-limit-last: always;
 }
 
 

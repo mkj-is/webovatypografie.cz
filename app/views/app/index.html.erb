@@ -1,32 +1,52 @@
-<div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper container">
-        <div class="col s12">
-          <a href="#!" class="brand-logo">Truty</a>
-        </div>
-      </div>
-    </nav>
-  </div>
 <div class="container">
   <%= form_for :input do |f| %>
-    <p class="input-field">
-      <%= f.label :text %>
-      <%= f.text_area :text, class: "materialize-textarea" %>
+    <p>
+      <%= f.label :text, "V tomto textu opravit typografii:" %><br>
+      <%= f.text_area :text, rows: 4 %>
+    </p>
+    <p class="checkboxes">
+       <%= f.check_box :hyphens %>
+       <%= f.label :hyphens, "Dělení slov" %><br>
+       <%= f.check_box :quotes %>
+       <%= f.label :quotes, "Úvozovky" %><br>
+       <%= f.check_box :ellipsis %>
+       <%= f.label :ellipsis, "Trojtečka" %><br>
+       <%= f.check_box :dashes %>
+       <%= f.label :dashes, "Pomlčky" %><br>
+       <%= f.check_box :abbreviations %>
+       <%= f.label :abbreviations, "Zkratky" %><br>
+       <%= f.check_box :prepositions %>
+       <%= f.label :prepositions, "Předložky" %><br>
+       <%= f.check_box :numbers %>
+       <%= f.label :numbers, "Čísla" %><br>
+       <%= f.check_box :dates %>
+       <%= f.label :dates, "Data" %><br>
+       <%= f.check_box :characters %>
+       <%= f.label :characters, "Speciální znaky" %><br>
+       <%= f.check_box :brackets %>
+       <%= f.label :brackets, "Závorky" %><br>
+       <%= f.check_box :multiplication %>
+       <%= f.label :multiplication, "Násobení" %><br>
+       <%= f.check_box :units %>
+       <%= f.label :units, "Fyzikální jednotky" %><br>
+       <%= f.check_box :widows %>
+       <%= f.label :widows, "Vdovy" %>
     </p>
     <p>
-      <%= f.label :language %>
-      <%= f.select :language, ['English', 'French', 'Czech'], {}, { :class => 'browser-default' } %>
+      <%= f.label :language, "Jazyk:" %><br>
+      <%= f.select :language, options_for_select([['Čeština', :czech], ['English', :english], ['Français', :french]]), {}, { :class => 'browser-default' } %>
     </p>
     <p>
       <%= f.check_box :escape %>
-      <%= f.label :escape, "Escape HTML entities" %>
+      <%= f.label :escape, "Převést do HTML entit" %>
     </p>
     <p>
-      <%= f.button "Convert input", class: "btn waves-effect waves-light" %>
+      <%= f.button "Zpracovat vstup", class: "btn" %>
     </p>
   <% end %>
   <% if @fixed_text %>
-    <p class="flow-text">
+    <h2>Zpracovaný výstup:</h2>
+    <p>
       <%= @fixed_text %>
     </p>
   <% end %>

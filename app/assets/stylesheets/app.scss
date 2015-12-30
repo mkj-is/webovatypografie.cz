@@ -2,7 +2,7 @@
 @charset "utf-8";
 
 // Our variables
-$base-font-family: "ff-tisa-web-pro", "ff-meta-serif-web-pro", serif;
+$base-font-family: "ff-meta-serif-web-pro", serif;
 $base-font-size:   1.35em;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
@@ -38,11 +38,23 @@ $on-laptop:        $content-width;
     }
 }
 
+@mixin min-media-query($device) {
+    @media screen and (min-width: $device) {
+        @content;
+    }
+}
+
+@mixin prefix($property, $parameters...) {
+  @each $prefix in -webkit-, -moz-, -ms-, "" {
+    #{$prefix}#{$property}: $parameters;
+  }
+}
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
         "layout",
+        "form",
         "syntax-highlighting"
 ;
