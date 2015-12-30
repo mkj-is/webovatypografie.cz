@@ -13,6 +13,9 @@ class AppController < ActionController::Base
       escape = :none
       escape = :html if @in[:escape] == "1"
       language = @in[:language].downcase.to_s
+      if @in["text"].length == 0 then
+        @in["text"] = "Nebyl vložen žádný text pro konverzi."
+      end
       @fixed_text = Truty.convert(@in["text"], escape, language)
       @input = OpenStruct.new(params[:input])
     else
@@ -27,5 +30,5 @@ class AppController < ActionController::Base
 
   def about
   end
-  
+
 end
