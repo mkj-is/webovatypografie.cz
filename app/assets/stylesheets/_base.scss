@@ -226,3 +226,13 @@ pre {
         }
     }
 }
+
+/**
+ * Horizontal line
+ */
+hr {
+    border: 0px;
+    height: 1px;
+    background-color: $grey-color-light;
+    margin-bottom: $base-font-size / 2;
+}

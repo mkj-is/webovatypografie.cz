@@ -18,3 +18,12 @@ textarea {
 input[type=checkbox] {
 	vertical-align: middle;
 }
+
+option, button, select {
+	font-family: inherit;
+	font-size: inherit;
+}
+
+button {
+	padding: $base-font-size / 2;
+}

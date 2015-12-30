@@ -20,6 +20,7 @@ class AppController < ActionController::Base
       @@features.each do |feature|
         defaults[feature] = 1
       end
+      defaults[:language] = :czech
       @input = OpenStruct.new(defaults)
     end
   end

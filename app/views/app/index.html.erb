@@ -1,7 +1,7 @@
 <div class="container">
   <%= form_for :input do |f| %>
     <p>
-      <%= f.label :text, "V tomto textu opravit typografii:" %><br>
+      <%= f.label :text, "Opravit typografické chyby v tomto textu:" %><br>
       <%= f.text_area :text, rows: 4 %>
     </p>
     <p class="checkboxes">
@@ -32,10 +32,17 @@
        <%= f.check_box :widows %>
        <%= f.label :widows, "Vdovy" %>
     </p>
+    <hr>
     <p>
       <%= f.label :language, "Jazyk:" %><br>
-      <%= f.select :language, options_for_select([['Čeština', :czech], ['English', :english], ['Français', :french]]), {}, { :class => 'browser-default' } %>
+      <%= f.radio_button :language, :czech %>
+      <%= f.label :language_czech, "Čeština" %><br>
+      <%= f.radio_button :language, :english %>
+      <%= f.label :language_english, "English" %><br>
+      <%= f.radio_button :language, :french %>
+      <%= f.label :language_french, "Français" %>
     </p>
+    <hr>
     <p>
       <%= f.check_box :escape %>
       <%= f.label :escape, "Převést do HTML entit" %>
@@ -45,6 +52,7 @@
     </p>
   <% end %>
   <% if @fixed_text %>
+    <hr>
     <h2>Zpracovaný výstup:</h2>
     <p>
       <%= @fixed_text %>
