@@ -16,7 +16,8 @@ class AppController < ActionController::Base
       if @in["text"].length == 0 then
         @in["text"] = "Nebyl vložen žádný text pro konverzi."
       end
-      @fixed_text = Truty.convert(@in["text"], escape, language)
+      @fixed_text = ERB::Util.html_escape(Truty.convert(@in["text"], escape, language))
+      @fixed_text.gsub!(/\n+/, '</p><p>')
       @input = OpenStruct.new(params[:input])
     else
       defaults = {}
