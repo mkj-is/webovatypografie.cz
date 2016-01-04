@@ -1,0 +1,62 @@
+
+<ul>
+	<li><a href="#o-webu">O webu</a></li>
+	<li><a href="#o-nastroji">O nástroji</a></li>
+	<li><a href="#deleni-slov">Dělení slov</a></li>
+	<li><a href="#mezery">Mezery</a></li>
+	<li><a href="#delka-radku">Délka řádku</a></li>
+	<li><a href="#css">Optimální styl</a></li>
+</ul>
+
+<h3 name="#o-webu">O webu</h3>
+
+<p>Web vzniknul jako součást bakalářské práce s názvem Možnosti a limity webové typografie. Motivace pro vytvoření tohoto webu byly nedostatky typografie v České republice i v zahraničí. Snažíme se o prezentaci funkční a estetické formy typografie a přiblížit technologie, které typografii na webu dokáží pozvednout na vyšší úroveň. Nejdůležitější součástí webu ovšem je <a href="/">nástroj na opravu typografických chyb</a> přímo v textu. Tato stránka přímo shrnuje některé základní poznatky z práce, pro zdroje, plný text a detailní analýzu navštivte archiv práce.</p>
+
+<a name="o-nastroji"></a><h3>O nástroji</h3>
+
+<p>Nástroj se snaží o opravu největších typografických nedostatků. Mezi opravy, které se nástroj snaží provést patří přidání měkkých spojovníků, dělení slov, korektní uvozovky, výpustka a další složitější znaky, pomlčky, zkratky a nedělitelné mezery za nimi, jednopísmenné předložky a spojky, data a čas, závorky a mezery kolem nich, znak násobení, mezera mezi jednotkami a jednoslovný sirotek na konci odstavce. Všechny tyto volby jsou nastavitelné. Nemůžeme však nikdy zaručit stoprocentní spolehlivost, nástroj se typografii pouze snaží vylepšit, některé sémantické problémy však nedokáže vyřešit. Základní dostupný jazyk je čeština, experimentálně je podporována francouzština a angličtina. Jeho kód je <a href="https://github.com/mkj-is/Truty">volně dostupný</a> a úpravy jsou vítány. Podrobná dokumentace je dostupná na serveru <a href="http://www.rubydoc.info/gems/truty">Rubydoc</a>.</p>
+
+<a name="deleni-slov"></a><h3>Dělení slov</h3>
+
+<p>Prvotní cíl dělení je výrazně praktický, ušetřit místo nebo materiál. Dělení také usnadňuje sazbu do bloku a zamezuje vzniku rozsáhlých mezer mezi slovy a následně řek mezi řádky. V případě zarovnání do bloku je ovšem dělení slov nutné i z pohledu estetiky. Pro zachování jednotného zabarvení textu se bez něj neobejdeme. Ale vzhledem k tomu, že nemůžeme přesně odladit šířku textu a jeho umístění kvůli tekuté podstatě textu na internetu, tak se řekám nedokážeme vyvarovat úplně. Proto doporučejeme zarovnání vlevo s dělením. Šířka řádků je v něm pak také více konzistentní. V případě odstavce bez dělení uvidíme, že mezery na koncích některých řádků budou obrovské.</p>
+
+<p>Místa dělení jsou řízena pravopisnými pravidly, <a href="http://prirucka.ujc.cas.cz/?id=135&dotaz=dělen%C3%AD%20slov">Internetová jazyková příručka</a> je pěkně shrnuje a je nejpřísnější, neboť se pravidla v některých jiných příručkách drobně liší. Technicky nástroj funguje tak, že na místa delení přidá neviditelný znak měkký spojovník, který prohlížeši dá najevo, že se v daném místě může slovo rozdělit. Tato metoda je podporována ve všech moderních prohlížečích. Dále v poslední kapitole jsou uvedeny styly, které zaručí i typograficky správné dělení v prohlížečích, které to podporují, dnes je to především Internet Explorer 10 a vyšší.
+
+<a name="mezery"></a><h3>Mezery</h3>
+
+<p>Jak by se mohlo na první pohled laikovi znát, neexistuje pouze jeden typ mezery. V textu je mnoho příležitostí pro mezery různých šířek a vlastností. Nejdůležitější z nich je určitě nedělitelná mezera (někdy také pevná nebo nezlomitelná mezera, anglicky non-breaking space). Pokud ji dáme mezi slova a ty se vyskytují u konce řádku, tak tato mezera zamezí dělení a obě dvě slova se přesunou na začátek dalšího řádku. Na webu funguje shodně s klasickými textovými procesory. I v nich většinou musíme nedělitelnou mezeru přidat manuálně, pokud nemáme zapnuty automatické korekce a nainstalován slovník konkrétního jazyka. I tehdy však musíme vždy kontrolovat zda bylo vše doplněno správně. Pravidla pro užití nedělitelné mezery jsou ošetřena například normou ČSN 01 6910, která definuje grafickou úpravu textů zpracovaných grafickými procesory.</p>
+
+<a name="delka-radku"></a><h3>Délka řádku</h3>
+
+Ideální délka řádku je okolo 65 znaků – tedy 2,5 násobek římské abecedy – některé zdroje uvádí, že nejlépe čitelný je rozsah mezi zhruba 45 až 75 znaky, někdy je tento rozsah zvýšen až na 85. Pro písmo použité na tomto webu, FF Meta v řezu regular, pro dosažení této relativní míry dosáhneme velikostí zhruba 23 em – čtverčíků. Pokud použijeme tuto relativní míru, tak se i šířka odstavců bude přizpůsobovat velikosti písma.
+
+<a name="css"></a><h3>Optimální styl</h3>
+
+V této poslední kapitole shrnujeme a na názorné ukázce kódu ukazujeme jaký styl doporučujeme po naší analýze a výzkumu pro jakýkoliv delší text, ale opět opakujeme, typografie je o doporučeních, ne příkazech.
+
+<pre>
+width: 23em;
+text-align: left;
+text-rendering: optimizeLegibility;
+
+font-smoothing: antialiased;
+-webkit-font-smoothing: antialiased;
+-moz-font-smoothing: antialiased;
+-ms-font-smoothing: antialiased;
+
+hyphens: manual;
+-webkit-hyphens: manual;
+-moz-font-hyphens: manual;
+-ms-hyphens: manual;
+
+hyphenate-limit-lines: 3;
+-webkit-hyphenate-limit-lines: 3;
+-moz-font-hyphenate-limit-lines: 3;
+-ms-hyphenate-limit-lines: 3;
+
+hyphenate-limit-last: always;
+-webkit-hyphenate-limit-last: always;
+-moz-font-hyphenate-limit-last: always;
+-ms-hyphenate-limit-last: always;
+</pre>
+
