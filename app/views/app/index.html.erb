@@ -1,61 +1,60 @@
-<div class="container">
-  <%= form_for :input do |f| %>
-    <p>
-      <%= f.label :text, "Opravit typografické chyby v tomto textu:" %><br>
-      <%= f.text_area :text, rows: 4 %>
-    </p>
-    <p class="checkboxes">
-       <%= f.check_box :hyphens %>
-       <%= f.label :hyphens, "Dělení slov" %><br>
-       <%= f.check_box :quotes %>
-       <%= f.label :quotes, "Úvozovky" %><br>
-       <%= f.check_box :ellipsis %>
-       <%= f.label :ellipsis, "Trojtečka" %><br>
-       <%= f.check_box :dashes %>
-       <%= f.label :dashes, "Pomlčky" %><br>
-       <%= f.check_box :abbreviations %>
-       <%= f.label :abbreviations, "Zkratky" %><br>
-       <%= f.check_box :prepositions %>
-       <%= f.label :prepositions, "Předložky" %><br>
-       <%= f.check_box :numbers %>
-       <%= f.label :numbers, "Čísla" %><br>
-       <%= f.check_box :dates %>
-       <%= f.label :dates, "Data" %><br>
-       <%= f.check_box :characters %>
-       <%= f.label :characters, "Speciální znaky" %><br>
-       <%= f.check_box :brackets %>
-       <%= f.label :brackets, "Závorky" %><br>
-       <%= f.check_box :multiplication %>
-       <%= f.label :multiplication, "Násobení" %><br>
-       <%= f.check_box :units %>
-       <%= f.label :units, "Fyzikální jednotky" %><br>
-       <%= f.check_box :widows %>
-       <%= f.label :widows, "Vdovy" %>
-    </p>
-    <hr>
-    <p>
-      <%= f.label :language, "Jazyk:" %><br>
-      <%= f.radio_button :language, :czech %>
-      <%= f.label :language_czech, "Čeština" %><br>
-      <%= f.radio_button :language, :english %>
-      <%= f.label :language_english, "English" %><br>
-      <%= f.radio_button :language, :french %>
-      <%= f.label :language_french, "Français" %>
-    </p>
-    <hr>
-    <p>
-      <%= f.check_box :escape %>
-      <%= f.label :escape, "Převést do HTML entit" %>
-    </p>
-    <p>
-      <%= f.button "Zpracovat vstup" %>
-    </p>
-  <% end %>
-  <% if @fixed_text %>
-    <hr>
-    <h2>Zpracovaný výstup:</h2>
-    <p>
-      <%= raw @fixed_text %>
-    </p>
-  <% end %>
-</div>
+<%= form_for :input do |f| %>
+  <p>
+    <%= f.label :text, "Opravit typografické chyby v tomto textu:" %><br>
+    <%= f.text_area :text, rows: 4 %>
+  </p>
+  <p class="checkboxes">
+     <%= f.check_box :hyphens %>
+     <%= f.label :hyphens, "Dělení slov" %><br>
+     <%= f.check_box :quotes %>
+     <%= f.label :quotes, "Úvozovky" %><br>
+     <%= f.check_box :ellipsis %>
+     <%= f.label :ellipsis, "Trojtečka" %><br>
+     <%= f.check_box :dashes %>
+     <%= f.label :dashes, "Pomlčky" %><br>
+     <%= f.check_box :abbreviations %>
+     <%= f.label :abbreviations, "Zkratky" %><br>
+     <%= f.check_box :prepositions %>
+     <%= f.label :prepositions, "Předložky" %><br>
+     <%= f.check_box :numbers %>
+     <%= f.label :numbers, "Čísla" %><br>
+     <%= f.check_box :dates %>
+     <%= f.label :dates, "Data" %><br>
+     <%= f.check_box :characters %>
+     <%= f.label :characters, "Speciální znaky" %><br>
+     <%= f.check_box :brackets %>
+     <%= f.label :brackets, "Závorky" %><br>
+     <%= f.check_box :multiplication %>
+     <%= f.label :multiplication, "Násobení" %><br>
+     <%= f.check_box :units %>
+     <%= f.label :units, "Fyzikální jednotky" %><br>
+     <%= f.check_box :widows %>
+     <%= f.label :widows, "Sirotci" %>
+  </p>
+  <hr>
+  <p>
+    <%= f.label :language, "Jazyk:" %><br>
+    <%= f.radio_button :language, :czech %>
+    <%= f.label :language_czech, "Čeština" %><br>
+    <%= f.radio_button :language, :english %>
+    <%= f.label :language_english, "English" %><br>
+    <%= f.radio_button :language, :french %>
+    <%= f.label :language_french, "Français" %>
+  </p>
+  <hr>
+  <p>
+    <%= f.check_box :escape %>
+    <%= f.label :escape, "Převést do HTML entit" %>
+  </p>
+  <p>
+    <%= f.button "Zpracovat vstup" %>
+  </p>
+<% end %>
+<% if @fixed_text %>
+  <hr>
+  <h2>Zpracovaný výstup:</h2>
+  <p>
+    <%= raw @fixed_text %>
+  </p>
+<% end %>
+
