@@ -18,6 +18,7 @@ class AppController < ActionController::Base
       end
       @fixed_text = ERB::Util.html_escape(Truty.convert(@in["text"], escape, language))
       @fixed_text.gsub!(/\n+/, '</p><p>')
+      @fixed_text.gsub!('&amp;#13;&amp;#10;', '</p><p>')
       @input = OpenStruct.new(params[:input])
     else
       defaults = {}
