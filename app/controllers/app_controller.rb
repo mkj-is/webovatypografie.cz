@@ -16,7 +16,13 @@ class AppController < ActionController::Base
       if @in["text"].length == 0 then
         @in["text"] = "Nebyl vložen žádný text pro konverzi."
       end
-      @fixed_text = ERB::Util.html_escape(Truty.convert(@in["text"], escape, language))
+
+      features = []
+      for key, value in params[:input].keys
+        features << key.to_sym if value == 1
+      end
+
+      @fixed_text = ERB::Util.html_escape(Truty.convert(@in["text"], escape, language, features))
       @fixed_text.gsub!(/\n+/, '</p><p>')
       @fixed_text.gsub!('&amp;#13;&amp;#10;', '</p><p>')
       @input = OpenStruct.new(params[:input])
