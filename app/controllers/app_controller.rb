@@ -18,8 +18,8 @@ class AppController < ActionController::Base
       end
 
       features = []
-      for key, value in params[:input].keys
-        features << key.to_sym if value == 1
+      for key, value in params[:input]
+        features << key.to_sym if value.to_i == 1
       end
 
       @fixed_text = ERB::Util.html_escape(Truty.convert(@in["text"], escape, language, features))
