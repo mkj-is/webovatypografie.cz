@@ -5,31 +5,31 @@
   </p>
   <p class="checkboxes">
      <%= f.check_box :hyphens %>
-     <%= f.label :hyphens, "Dělení slov" %><br>
+     <%= f.label :hyphens, abbr("Dělení slov", "Do textu přidává potenciální místa pro dělení slov.") %><br>
      <%= f.check_box :quotes %>
-     <%= f.label :quotes, "Uvozovky" %><br>
+     <%= f.label :quotes, abbr("Uvozovky", "Anglické programátorské uvozovky nahrazuje za české.") %><br>
      <%= f.check_box :ellipsis %>
-     <%= f.label :ellipsis, "Trojtečka" %><br>
+     <%= f.label :ellipsis, abbr("Trojtečka", "Více teček za sebou zamění za znak trojtečky.") %><br>
      <%= f.check_box :dashes %>
-     <%= f.label :dashes, "Pomlčky" %><br>
+     <%= f.label :dashes, abbr("Pomlčky", "Nesprávné spojovníky nahrazuje za pomlčky, více spojovníků za sebou nahradí za širokou americkou pomlčku. Opraví mezery okolo nich.") %><br>
      <%= f.check_box :abbreviations %>
-     <%= f.label :abbreviations, "Zkratky" %><br>
+     <%= f.label :abbreviations, abbr("Zkratky", "Do běžných českých zkratek – případně za ně – přidá nedělitelnou mezeru. Opravuje například tituly, hodnosti a typy společností.") %><br>
      <%= f.check_box :prepositions %>
-     <%= f.label :prepositions, "Předložky" %><br>
+     <%= f.label :prepositions, abbr("Předložky", "Po jednoznakových předložkách přidá nedělitelnou mezeru.") %><br>
      <%= f.check_box :numbers %>
-     <%= f.label :numbers, "Čísla" %><br>
+     <%= f.label :numbers, abbr("Čísla", "Vloží tenké mezery do dlouhých čísel.") %><br>
      <%= f.check_box :dates %>
-     <%= f.label :dates, "Data" %><br>
+     <%= f.label :dates, abbr("Data", "Snaží se o doplnění nedělitelných mezer mezi data.") %><br>
      <%= f.check_box :characters %>
-     <%= f.label :characters, "Speciální znaky" %><br>
+     <%= f.label :characters, abbr("Speciální znaky", "Některé víceznakové sekvence nahrazuje za jejich správnou jednoznakovou obdobu. Například trademark nebo copyright.") %><br>
      <%= f.check_box :brackets %>
-     <%= f.label :brackets, "Závorky" %><br>
+     <%= f.label :brackets, abbr("Závorky", "Kontroluje mezery mezi závorkami.") %><br>
      <%= f.check_box :multiplication %>
-     <%= f.label :multiplication, "Násobení" %><br>
+     <%= f.label :multiplication, abbr("Násobení", "Písmeno x nahrazuje za znak násobení.") %><br>
      <%= f.check_box :units %>
-     <%= f.label :units, "Fyzikální jednotky" %><br>
+     <%= f.label :units, abbr("Fyzikální jednotky", "Vkládá mezi jednotku a hodnotu nedělitelnou mezeru.") %><br>
      <%= f.check_box :widows %>
-     <%= f.label :widows, "Sirotci" %>
+     <%= f.label :widows, abbr("Slovo na konci odstavce", "Přidává nedělitelnou mezeru před poslední slovo na konci odstavce, aby neodskočilo na samostatný řádek.") %>
   </p>
   <hr>
   <p>

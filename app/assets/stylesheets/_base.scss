@@ -240,3 +240,11 @@ hr {
     height: 1px;
     background-color: $grey-color-light;
 }
+
+/**
+ * Span elements with descriptions
+ **/
+.term {
+    border-bottom: 1px dashed;
+    border-color: lighten($grey-color-dark, 45%);
+}
