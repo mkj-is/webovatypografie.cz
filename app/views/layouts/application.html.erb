@@ -9,6 +9,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <meta property="og:url" content="<%= url_for %>" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Webová typografie" />
+  <meta property="og:description" content="Jed­no­duchý nást­roj a příručka pro opravu nej­ob­vyk­lejších typog­ra­fic­kých chyb na webu." />
+  <meta property="og:image" content="http://<%= request.host %>/og.png" />
+  <meta property="og:locale" content="cs_CZ">
+
   <script src="//use.typekit.net/lah2jbn.js"></script>
 <script>try{Typekit.load();}catch(e){}</script>
 </head>
