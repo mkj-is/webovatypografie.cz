@@ -11,8 +11,10 @@ class AppController < ActionController::Base
     if params[:input] then
       @in = params[:input]
       escape = :none
-      escape = :html if @in[:escape] == "1"
+      escape = :czech_html if @in[:escape] == "1"
+
       language = @in[:language].downcase.to_s
+
       if @in["text"].length == 0 then
         @in["text"] = "Nebyl vložen žádný text pro konverzi."
       end
