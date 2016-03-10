@@ -45,4 +45,5 @@ group :development do
   gem 'spring'
 end
 
-gem 'truty'
+# The text conversion library
+gem 'truty', '~> 1.0.1'
