@@ -46,4 +46,4 @@ group :development do
 end
 
 # The text conversion library
-gem 'truty', '~> 1.0.1'
+gem 'truty', '~> 1.0.2'
